@@ -1,0 +1,25 @@
+; Sample INF for a test filter driver - adjust values for real package.
+[Version]
+Signature="$WINDOWS NT$"
+Class=Net
+ClassGuid={4d36e972-e325-11ce-bfc1-08002be10318}
+Provider=%ProviderName%
+CatalogFile=sample.cat
+DriverVer=07/01/2025,1.0.0.0
+
+[Manufacturer]
+%ManufacturerName% = Devices,NTamd64
+
+[Devices.NTamd64]
+%DeviceName% = Install, *PNP0501
+
+[Install]
+CopyFiles=DummyCopy
+
+[DestinationDirs]
+DummyCopy = 12
+
+[Strings]
+ProviderName = "cross-netdriver"
+ManufacturerName = "cross-netdriver"
+DeviceName = "cross-netdriver filter (placeholder)"
